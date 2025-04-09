@@ -11,7 +11,7 @@ exports.handler = async function (event) {
         return { statusCode: 400, body: 'Missing fields' };
     }
 
-    const filePath = path.join(__dirname, '../storage/feedback.json')
+    const filePath = path.join(__dirname, 'storage', 'feedback.json')
     const feedbacks = JSON.parse(fs.readFileSync(filePath));
     const newFeedback = {
         id: Date.now(),
